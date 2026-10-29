@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Candela · Velas aromáticas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6EDE0;--surface:#FBF5EC;--card:#FFFFFF;--text:#3A2E27;--muted:#7A6C62;--accent:#9A4F36;--amber:#C98A3B;--sage:#8FA383;--line:#E4D3BC;--hero1:#F1DFC6;--hero2:#F6EDE0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#1E1612;--surface:#261B16;--card:#2E221B;--text:#EFE3D3;--muted:#B5A394;--accent:#E0997C;--amber:#E0A857;--sage:#9DB090;--line:#43332A;--hero1:#34241B;--hero2:#1E1612}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#1E1612;--surface:#261B16;--card:#2E221B;--text:#EFE3D3;--muted:#B5A394;--accent:#E0997C;--amber:#E0A857;--sage:#9DB090;--line:#43332A;--hero1:#34241B;--hero2:#1E1612}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Lato',system-ui,sans-serif;font-weight:400;line-height:1.65;font-size:16px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .5em;color:var(--accent)}
+h1{font-size:clamp(2.8rem,10vw,5rem);letter-spacing:.08em}
+h2{font-size:clamp(1.9rem,6vw,2.7rem)}
+h3{font-size:1.45rem;color:var(--text)}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:10px;display:block}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;max-width:1000px;margin:0 auto}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;letter-spacing:.14em;color:var(--accent);text-decoration:none;font-weight:600}
+nav{display:flex;gap:18px;font-size:.92rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--accent)}
+.hero{background:linear-gradient(180deg,var(--hero1),var(--hero2));text-align:center;padding:56px 0 72px}
+.flame{width:26px;height:44px;margin:0 auto 14px;background:radial-gradient(ellipse at 50% 70%,#FFE9A8 0,#F5B042 45%,rgba(201,138,59,0) 72%);border-radius:50% 50% 50% 50%/65% 65% 35% 35%;animation:fl 2.8s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(245,176,66,.7))}
+@keyframes fl{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,1.12) rotate(2deg)}}
+@media (prefers-reduced-motion:reduce){.flame{animation:none}}
+.tag{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.3rem,4.5vw,1.8rem);color:var(--text);margin:.2em 0 1em}
+.sub{max-width:560px;margin:0 auto 1.6em;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:2px solid var(--accent);margin:4px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.dot{width:54px;height:54px;border-radius:50%;margin-bottom:14px;box-shadow:inset 0 -6px 12px rgba(0,0,0,.12)}
+.card p{color:var(--muted);margin:0 0 .6em;font-size:.95rem}
+.notes{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amber);font-weight:700}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+.quote{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.6rem;color:var(--accent);line-height:1.3}
+ul.chk{list-style:none;padding:0;margin:0}
+ul.chk li{padding:8px 0 8px 30px;position:relative;border-bottom:1px dashed var(--line)}
+ul.chk li::before{content:"✦";position:absolute;left:0;color:var(--amber)}
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.step{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 18px 58px;position:relative;font-size:.95rem}
+.step::before{content:counter(s);position:absolute;left:16px;top:14px;width:30px;height:30px;border-radius:50%;background:var(--amber);color:#fff;font-weight:700;display:grid;place-items:center}
+.box{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.box .card h3{margin-bottom:.3em}
+form{display:grid;gap:12px;max-width:520px}
+label{font-size:.85rem;color:var(--muted);font-weight:700}
+select,input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);font:inherit}
+.contact{text-align:center}
+footer{text-align:center;padding:36px 20px calc(36px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+.msg{margin-top:10px;font-size:.9rem;color:var(--muted)}
+.price{display:block;margin-top:6px;font-weight:700;font-size:1.3rem;color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#inicio">CANDELA</a>
+  <nav>
+    <a href="#aromas">Aromas</a><a href="#regalos">Regalos</a><a href="#cuidados">Cuidados</a><a href="#pedido">Pedidos</a>
+  </nav>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <div class="flame" aria-hidden="true"></div>
+    <span class="eyebrow">Velas aromáticas artesanales</span>
+    <h1>CANDELA</h1>
+    <p class="tag">“Encendé un momento para vos.”</p>
+    <p class="sub">Velas hechas a mano, en lotes pequeños, con cera vegetal, mecha de algodón y aromas que se sienten como hogar.</p>
+    <a class="btn" href="#pedido">Hacer un pedido</a>
+    <a class="btn ghost" href="#aromas">Ver aromas</a>
+  </div>
+</section>
+
+<section id="historia">
+  <div class="wrap two">
+    <div>
+      <span class="eyebrow">Nuestra historia</span>
+      <h2>Convertimos lo cotidiano en ritual</h2>
+      <p>Candela nació con una idea simple: que una pausa pequeña puede cambiar el día. Cada vela se elabora a mano, con tiempo y cuidado, pensando en el momento en que va a encenderse: una tarde de lectura, un baño largo, una mesa con amigos.</p>
+      <p>No vendemos solo velas. Vendemos calidez, detalle y la excusa perfecta para frenar un rato.</p>
+    </div>
+    <div class="card">
+      <p class="quote">“La calma también se enciende.”</p>
+      <ul class="chk">
+        <li>Hechas a mano en lotes pequeños</li>
+        <li>Cera vegetal y mecha de algodón</li>
+        <li>Frasco reutilizable</li>
+        <li>Presentación lista para regalar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="aromas" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Colección permanente</span>
+    <h2>Cinco aromas, cinco momentos</h2>
+    <div class="grid">
+      <div class="card"><div class="dot" style="background:radial-gradient(circle at 35% 30%,#F3D9A4,#D9A55B)"></div><h3>Hogar</h3><p>La calidez de una tarde en casa. Vainilla suave con un fondo de ámbar que envuelve y abriga.</p><span class="notes">Vainilla · Ámbar</span></div>
+      <div class="card"><div class="dot" style="background:radial-gradient(circle at 35% 30%,#D9CCEB,#9B86B8)"></div><h3>Calma</h3><p>Lavanda y manzanilla para bajar el ritmo. Un aroma suave que acompaña el final del día.</p><span class="notes">Lavanda · Manzanilla</span></div>
+      <div class="card"><div class="dot" style="background:radial-gradient(circle at 35% 30%,#FFE2A8,#F0A14B)"></div><h3>Alba</h3><p>Cítricos frescos con un toque de menta. Perfecta para empezar la mañana con energía.</p><span class="notes">Naranja · Pomelo · Menta</span></div>
+      <div class="card"><div class="dot" style="background:radial-gradient(circle at 35% 30%,#C7D6BA,#7E9672)"></div><h3>Bosque</h3><p>Madera cálida y profunda. Sándalo y cedro para un ambiente sereno y de concentración.</p><span class="notes">Sándalo · Cedro</span></div>
+      <div class="card"><div class="dot" style="background:radial-gradient(circle at 35% 30%,#E8B79B,#A9573B)"></div><h3>Invierno</h3><p>El aroma de las reuniones, las mantas y las tardes frías, con especias y manzana asada.</p><span class="notes">Canela · Clavo · Manzana</span></div>
+    </div>
+    <h3 style="margin-top:36px">Nuestras velas</h3>
+    <div class="grid">
+      <div class="card"><h3>Vela Mini</h3><span class="price">Gs. 15.000</span></div>
+      <div class="card"><h3>Vela Clásica</h3><span class="price">Gs. 25.000</span></div>
+      <div class="card"><h3>Vela Grande</h3><span class="price">Gs. 35.000</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="regalos">
+  <div class="wrap">
+    <span class="eyebrow">Para regalar</span>
+    <h2>Regalos con calidez</h2>
+    <p style="max-width:620px;color:var(--muted)">Regalá una pausa. Cada box viene en caja de cartón con cinta natural y una tarjeta con tu mensaje.</p>
+    <div class="box">
+      <div class="card"><h3>Box Esencial</h3><p>Vela clásica, fósforos y tarjeta.</p><span class="price">Gs. 130.000</span></div>
+      <div class="card"><h3>Box Ritual</h3><p>Vela clásica, apagavelas, fósforos, tarjeta y difusor mini.</p><span class="price">Gs. 150.000</span></div>
+      <div class="card"><h3>Topper Candie</h3><span class="price">Gs. 35.000</span></div>
+    </div>
+    <p style="margin-top:22px;color:var(--muted)">¿Souvenirs, eventos o regalos para tu empresa? Armamos pedidos personalizados por cantidad.</p>
+  </div>
+</section>
+
+<section id="cuidados" class="alt">
+  <div class="wrap">
+    <span class="eyebrow">Cuidá tu vela</span>
+    <h2>Para que dure más y huela mejor</h2>
+    <div class="steps">
+      <div class="step">En el primer uso, dejala hasta que la cera se derrita hasta los bordes (2 a 3 horas).</div>
+      <div class="step">Recortá la mecha a 5 mm antes de cada encendido.</div>
+      <div class="step">No la dejes encendida más de 4 horas seguidas.</div>
+      <div class="step">Apagala con un apagavelas y no la muevas con la cera líquida.</div>
+      <div class="step">Dejá de usarla cuando quede 1 cm de cera. ¡Y reutilizá el frasco!</div>
+    </div>
+    <p style="margin-top:22px;color:var(--muted);font-size:.9rem"><strong>Seguridad:</strong> nunca dejes una vela encendida sin supervisión y mantenela fuera del alcance de niños y mascotas.</p>
+  </div>
+</section>
+
+<section id="pedido">
+  <div class="wrap two">
+    <div>
+      <span class="eyebrow">Pedidos</span>
+      <h2>Contanos qué te gustó</h2>
+      <p>Elegí tu aroma y formato, y armamos tu pedido por WhatsApp. Te asesoramos si no sabés cuál elegir.</p>
+      <p class="msg" id="aviso"></p>
+    </div>
+    <form id="f" onsubmit="return false">
+      <div><label for="n">Tu nombre</label><input id="n" placeholder="Ej.: Lucía"></div>
+      <div><label for="a">Aroma</label><select id="a"><option>Hogar</option><option>Calma</option><option>Alba</option><option>Bosque</option><option>Invierno</option><option>No sé, necesito ayuda</option></select></div>
+      <div><label for="t">Producto</label><select id="t"><option>Vela Mini</option><option>Vela Clásica</option><option>Vela Grande</option><option>Box Esencial</option><option>Box Ritual</option><option>Topper Candie</option></select></div>
+      <div><label for="c">Cantidad</label><input id="c" type="number" min="1" value="1"></div>
+      <div><label for="m">Mensaje (opcional)</label><textarea id="m" rows="3" placeholder="Para regalo, evento, tarjeta personalizada…"></textarea></div>
+      <a class="btn" id="go" href="https://wa.me/595973686560" target="_blank" rel="noopener" style="text-align:center">Enviar pedido por WhatsApp</a>
+      <p class="msg">¿No se abre? Probá con estas opciones:</p>
+      <a class="btn ghost" id="app" href="whatsapp://send?phone=595973686560" style="text-align:center">Abrir en la app de WhatsApp</a>
+      <button class="btn ghost" id="cp" type="button">Copiar mensaje</button>
+      <p class="msg" id="cpm">O escribinos directo al <a href="https://wa.me/595973686560" target="_blank" rel="noopener"><strong>0973 686 560</strong></a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="alt contact">
+  <div class="wrap">
+    <span class="eyebrow">Seguinos</span>
+    <h2>Hecho a mano, pensado para tu hogar</h2>
+    <p style="color:var(--muted)">Instagram: <a href="https://www.instagram.com/candela_artesanal" target="_blank" rel="noopener"><strong>@candela_artesanal</strong></a> · WhatsApp: <strong>0973 686 560</strong></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo" style="font-size:1.3rem">CANDELA</div>
+  <p style="margin:.4em 0 0">Velas aromáticas artesanales · © 2026 Candela</p>
+</footer>
+
+<script>
+// Número de WhatsApp con código de país y sin símbolos (ej.: 5491122334455). Si queda vacío, el botón avisa.
+var WHATSAPP = '595973686560';
+var armar = function () {
+  var v = function (id) { return document.getElementById(id).value.trim(); };
+  var texto = 'Hola Candela! Soy ' + (v('n') || '[mi nombre]') + '. Quiero pedir ' + v('c') + ' × ' + v('t') + ', aroma ' + v('a') + '.' + (v('m') ? ' ' + v('m') : '');
+  var aviso = document.getElementById('aviso');
+  if (!WHATSAPP) { aviso.textContent = 'Muy pronto vas a poder enviar el pedido con un toque. Mientras tanto, escribinos por Instagram.'; return; }
+  document.getElementById('go').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
+  document.getElementById('app').href = 'whatsapp://send?phone=' + WHATSAPP + '&text=' + encodeURIComponent(texto);
+  window.__t = texto;
+};
+['n', 'a', 't', 'c', 'm'].forEach(function (id) {
+  var el = document.getElementById(id);
+  el.addEventListener('input', armar);
+  el.addEventListener('change', armar);
+});
+document.getElementById('go').addEventListener('click', armar);
+document.getElementById('cp').addEventListener('click', function () {
+  var t = window.__t || '';
+  var msg = document.getElementById('cpm');
+  var ok = function () { msg.textContent = 'Mensaje copiado. Pegalo en el chat de WhatsApp del 0973 686 560.'; };
+  var fb = function () {
+    var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); ok(); } catch (e) { msg.textContent = t; }
+    document.body.removeChild(ta);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(ok, fb); } else { fb(); }
+});
+armar();
+</script>
+</body>
+</html>
